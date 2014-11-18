@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>angular in class</title>
+    <title>Angular_in_Class</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css styles/vendor.css -->
@@ -21,18 +21,12 @@
     <script src="../bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
   </head>
-  <body ng-app="Peoplelist">
+  <body ng-app="PeopleList">
 
     <div class="hero-unit">
       <h1>Angular</h1>
-
-      <div class="something" ng-controller="PersonController">
-        <p ng-repeat="p in people">
-          {{ $index + 1}} - Hi, my name is {{p.name}} and I am {{p.age}} years old.
-          <a href=""ng-click="hello(p.name)">Say Hi</a>
-        </p>
-      </div>
-
+      <a href="#/">Home</a> | <a href="#/about">About</a>
+      <div class="container" ng-view></div>
     </div>
 
     <!-- build:js scripts/vendor.js -->
@@ -41,14 +35,15 @@
     <script src="../bower_components/underscore/underscore.js"></script>
     <script src="../bower_components/angular/angular.min.js"></script>
     <script src="../bower_components/angular-route/angular-route.min.js"></script>
-
-
-
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
-</body>
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/controllers/about_controller.js"></script>
+    <script src="scripts/controllers/other_controller.js"></script>
+    <script src="scripts/controllers/person_controller.js"></script>
+    <!-- endbuild -->
+
+  </body>
 </html>

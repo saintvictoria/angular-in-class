@@ -1,31 +1,24 @@
+(function (){
 
-var app = angular.module('Peoplelist', ['ngRoute']);
+  angular.module('PeopleList', ['ngRoute'])
 
-app.config( function ($routeProvider){
+  .config( function ($routeProvider) {
 
-  $routeProvider.when('/', {})
-});
+    $routeProvider.when('/', {
+      templateUrl: 'templates/list-template.html',
+      controller: 'PersonController'
+    });
 
-app.controller('PersonController', function ($scope){
+    $routeProvider.when('/about', {
+      templateUrl: 'templates/about-template.html',
+      controller: 'AboutController'
+    });
 
+    $routeProvider.otherwise({
+      templateUrl: 'templates/other-template.html',
+      controller: 'OtherController'
+    });
 
+  });
 
-  $scope.people = [
-  {
-    name: 'Tim',
-    age: 31
-  },
-  {
-    name: 'Bob',
-    age: 45
-  },
-  {
-    name: 'Sam',
-    age: 115
-  }
-];
-
-  $scope.hello = function (n){
-    alert('Hi there ' + n);
-  };
-});
+}());
